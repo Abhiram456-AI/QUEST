@@ -19,6 +19,9 @@ class QueryEngine:
         self.function_graph = function_graph
         self.knowledge_graph = knowledge_graph
         self.metrics = metrics or {}
+        # Backward-compatible aliases used by the multi-agent layer
+        self.repository_metrics = self.metrics
+        self.graph = self.dependency_graph
         self.dependency_path_engine = (
             dependency_path_engine
         )
@@ -40,6 +43,18 @@ class QueryEngine:
         self.execution_engine = (
             execution_engine
         )
+        # Convenience context bundle for agents and future integrations
+        self.context = {
+            "repository": self.repository,
+            "dependency_graph": self.dependency_graph,
+            "function_graph": self.function_graph,
+            "knowledge_graph": self.knowledge_graph,
+            "repository_metrics": self.repository_metrics,
+            "impact_engine": self.impact_engine,
+            "coupling_engine": self.coupling_engine,
+            "risk_engine": self.risk_engine,
+            "execution_engine": self.execution_engine,
+        }
         self._function_graph_stats = {
             "nodes": self.function_graph.number_of_nodes(),
             "edges": self.function_graph.number_of_edges(),

@@ -36,6 +36,9 @@ from reasoning.risk_engine import (
 from reasoning.execution_engine import (
     ExecutionEngine,
 )
+from agents.orchestrator import (
+    AgentOrchestrator,
+)
 
 
 if __name__ == "__main__":
@@ -131,6 +134,7 @@ if __name__ == "__main__":
         risk_engine=risk_engine,
         execution_engine=execution_engine,
     )
+    orchestrator = AgentOrchestrator(query_engine)
 
     print("\nQUERY ENGINE READY")
     print("Type 'exit' to quit.\n")
@@ -147,7 +151,7 @@ if __name__ == "__main__":
         if not query:
             continue
 
-        result = query_engine.query(query)
+        result = orchestrator.analyze(query)
 
         print("\nRESULT:")
         print(result)
