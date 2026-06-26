@@ -1,0 +1,570 @@
+{
+  "query": "show risk of main.py",
+  "reviewer": {
+    "agent": "reviewer",
+    "query": "show risk of main.py",
+    "evidence": {
+      "node": "app/main.py",
+      "risk_score": 0.291,
+      "risk_level": "LOW",
+      "reasons": [
+        "high instability (1.0)"
+      ],
+      "metrics": {
+        "fan_in": 0,
+        "fan_out": 1,
+        "centrality": 0.1,
+        "pagerank": 0.05359757088502381,
+        "blast_radius": 0,
+        "instability": 1.0
+      }
+    },
+    "findings": [
+      "app/main.py is classified as LOW risk (score=0.291).",
+      "high instability (1.0)",
+      "app/main.py demonstrates low predicted reliability under repository changes.",
+      "Quantum analysis remains inconclusive for app/main.py."
+    ],
+    "recommendations": [
+      "Consider decomposing responsibilities and reducing dependency concentration.",
+      "Introduce regression tests before modifying app/main.py."
+    ],
+    "risk_score": 0.291,
+    "confidence": 0.72,
+    "quantum_analysis": {
+      "risk_energy": 0.0,
+      "qaoa_priority": 0.0,
+      "qsvm_classification": "UNKNOWN",
+      "qsvm_confidence": 0.0,
+      "propagation_score": 0.0,
+      "stationary_probability": 0.0,
+      "repo_influence": 0.0,
+      "reliability_score": 0.0,
+      "uncertainty_score": 0.0,
+      "quantum_confidence": 0.35
+    },
+    "assessment_performed": true
+  },
+  "critic": {
+    "agent": "critic",
+    "query": "show risk of main.py",
+    "evidence": {
+      "node": "app/main.py",
+      "risk_score": 0.291,
+      "risk_level": "LOW",
+      "reasons": [
+        "high instability (1.0)"
+      ],
+      "metrics": {
+        "fan_in": 0,
+        "fan_out": 1,
+        "centrality": 0.1,
+        "pagerank": 0.05359757088502381,
+        "blast_radius": 0,
+        "instability": 1.0
+      }
+    },
+    "objections": [
+      "High instability in app/main.py should be evaluated alongside test coverage and change history.",
+      "Risk indicators for app/main.py should be interpreted in repository context and not in isolation.",
+      "Predicted low reliability for app/main.py should be validated against empirical evidence such as tests and change history.",
+      "Quantum evidence for app/main.py remains inconclusive and warrants additional investigation."
+    ],
+    "confidence": 0.72,
+    "quantum_analysis": {
+      "risk_energy": 0.0,
+      "qaoa_priority": 0.0,
+      "propagation_score": 0.0,
+      "repo_influence": 0.0,
+      "reliability_score": 0.0,
+      "uncertainty_score": 0.0,
+      "quantum_confidence": 0.35,
+      "skepticism_score": 0.4
+    },
+    "assessment_performed": true,
+    "challenged_nodes": [
+      "app/main.py"
+    ],
+    "skepticism_score": 0.4
+  },
+  "security": {
+    "agent": "security",
+    "query": "show risk of main.py",
+    "evidence": {
+      "node": "app/main.py",
+      "risk_score": 0.291,
+      "risk_level": "LOW",
+      "reasons": [
+        "high instability (1.0)"
+      ],
+      "metrics": {
+        "fan_in": 0,
+        "fan_out": 1,
+        "centrality": 0.1,
+        "pagerank": 0.05359757088502381,
+        "blast_radius": 0,
+        "instability": 1.0
+      }
+    },
+    "issues": [
+      "app/main.py exhibits low predicted reliability under repository modifications."
+    ],
+    "impacted_files": [],
+    "security_risk": 0.291,
+    "confidence": 0.72,
+    "propagation_hotspots": [],
+    "critical_modules": [],
+    "high_impact_modules": [],
+    "quantum_security_score": 0.1,
+    "quantum_analysis": {
+      "propagation_hotspots": [],
+      "critical_modules": [],
+      "high_impact_modules": [],
+      "quantum_security_score": 0.1,
+      "cascade_risk": 0.0,
+      "review_priority_modules": [],
+      "risk_zone": "LOW"
+    },
+    "risk_zone": "LOW",
+    "cascade_risk": 0.0,
+    "review_priority_modules": [],
+    "assessment_performed": true
+  },
+  "explainer": {
+    "agent": "explainer",
+    "query": "show risk of main.py",
+    "evidence": {
+      "node": "app/main.py",
+      "risk_score": 0.291,
+      "risk_level": "LOW",
+      "reasons": [
+        "high instability (1.0)"
+      ],
+      "metrics": {
+        "fan_in": 0,
+        "fan_out": 1,
+        "centrality": 0.1,
+        "pagerank": 0.05359757088502381,
+        "blast_radius": 0,
+        "instability": 1.0
+      }
+    },
+    "summary": "app/main.py is classified as LOW risk with a score of 0.291. it depends on 1 modules. Quantum perspective: predicted reliability is relatively low. Key indicators include: high instability (1.0). Quantum reasoning summary: For app/main.py, QSVM classified the module as UNKNOWN, quantum risk level was LOW, QAOA assigned a review priority of 0.000, and overall quantum confidence reached 0.350. Repository health summary: Quantum assessments remain exploratory and should be validated with additional evidence. Repository risk distribution: CRITICAL=0, HIGH=0, MODERATE=0, LOW=1. Explainability level: LOW.",
+    "recommendation": "app/main.py currently presents relatively low repository risk. Consider decomposing responsibilities and reducing dependency concentration in app/main.py.",
+    "confidence": 0.75,
+    "quantum_insights": [
+      {
+        "node": "app/main.py",
+        "risk_energy": 0.0,
+        "qaoa_priority": 0.0,
+        "propagation_score": 0.0,
+        "stationary_probability": 0.0,
+        "repo_influence": 0.0,
+        "reliability_score": 0.0,
+        "uncertainty_score": 0.0,
+        "quantum_confidence": 0.35,
+        "qsvm_classification": "UNKNOWN",
+        "confidence_label": "LOW",
+        "explainability_score": 0.44,
+        "risk_label": "LOW",
+        "explainability_label": "LOW"
+      }
+    ],
+    "quantum_confidence": 0.5,
+    "assessment_performed": true,
+    "repository_health_summary": "Quantum assessments remain exploratory and should be validated with additional evidence.",
+    "explainability_score": 0.44,
+    "narrative_coherence": 0.632,
+    "explanation_coverage": 1.0,
+    "repository_risk_distribution": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MODERATE": 0,
+      "LOW": 1
+    },
+    "dominant_explainability": "LOW"
+  },
+  "verifier": {
+    "agent": "verifier",
+    "reviewer": {
+      "agent": "reviewer",
+      "query": "show risk of main.py",
+      "evidence": {
+        "node": "app/main.py",
+        "risk_score": 0.291,
+        "risk_level": "LOW",
+        "reasons": [
+          "high instability (1.0)"
+        ],
+        "metrics": {
+          "fan_in": 0,
+          "fan_out": 1,
+          "centrality": 0.1,
+          "pagerank": 0.05359757088502381,
+          "blast_radius": 0,
+          "instability": 1.0
+        }
+      },
+      "findings": [
+        "app/main.py is classified as LOW risk (score=0.291).",
+        "high instability (1.0)",
+        "app/main.py demonstrates low predicted reliability under repository changes.",
+        "Quantum analysis remains inconclusive for app/main.py."
+      ],
+      "recommendations": [
+        "Consider decomposing responsibilities and reducing dependency concentration.",
+        "Introduce regression tests before modifying app/main.py."
+      ],
+      "risk_score": 0.291,
+      "confidence": 0.72,
+      "quantum_analysis": {
+        "risk_energy": 0.0,
+        "qaoa_priority": 0.0,
+        "qsvm_classification": "UNKNOWN",
+        "qsvm_confidence": 0.0,
+        "propagation_score": 0.0,
+        "stationary_probability": 0.0,
+        "repo_influence": 0.0,
+        "reliability_score": 0.0,
+        "uncertainty_score": 0.0,
+        "quantum_confidence": 0.35
+      },
+      "assessment_performed": true
+    },
+    "critic": {
+      "agent": "critic",
+      "query": "show risk of main.py",
+      "evidence": {
+        "node": "app/main.py",
+        "risk_score": 0.291,
+        "risk_level": "LOW",
+        "reasons": [
+          "high instability (1.0)"
+        ],
+        "metrics": {
+          "fan_in": 0,
+          "fan_out": 1,
+          "centrality": 0.1,
+          "pagerank": 0.05359757088502381,
+          "blast_radius": 0,
+          "instability": 1.0
+        }
+      },
+      "objections": [
+        "High instability in app/main.py should be evaluated alongside test coverage and change history.",
+        "Risk indicators for app/main.py should be interpreted in repository context and not in isolation.",
+        "Predicted low reliability for app/main.py should be validated against empirical evidence such as tests and change history.",
+        "Quantum evidence for app/main.py remains inconclusive and warrants additional investigation."
+      ],
+      "confidence": 0.72,
+      "quantum_analysis": {
+        "risk_energy": 0.0,
+        "qaoa_priority": 0.0,
+        "propagation_score": 0.0,
+        "repo_influence": 0.0,
+        "reliability_score": 0.0,
+        "uncertainty_score": 0.0,
+        "quantum_confidence": 0.35,
+        "skepticism_score": 0.4
+      },
+      "assessment_performed": true,
+      "challenged_nodes": [
+        "app/main.py"
+      ],
+      "skepticism_score": 0.4
+    },
+    "security": {
+      "agent": "security",
+      "query": "show risk of main.py",
+      "evidence": {
+        "node": "app/main.py",
+        "risk_score": 0.291,
+        "risk_level": "LOW",
+        "reasons": [
+          "high instability (1.0)"
+        ],
+        "metrics": {
+          "fan_in": 0,
+          "fan_out": 1,
+          "centrality": 0.1,
+          "pagerank": 0.05359757088502381,
+          "blast_radius": 0,
+          "instability": 1.0
+        }
+      },
+      "issues": [
+        "app/main.py exhibits low predicted reliability under repository modifications."
+      ],
+      "impacted_files": [],
+      "security_risk": 0.291,
+      "confidence": 0.72,
+      "propagation_hotspots": [],
+      "critical_modules": [],
+      "high_impact_modules": [],
+      "quantum_security_score": 0.1,
+      "quantum_analysis": {
+        "propagation_hotspots": [],
+        "critical_modules": [],
+        "high_impact_modules": [],
+        "quantum_security_score": 0.1,
+        "cascade_risk": 0.0,
+        "review_priority_modules": [],
+        "risk_zone": "LOW"
+      },
+      "risk_zone": "LOW",
+      "cascade_risk": 0.0,
+      "review_priority_modules": [],
+      "assessment_performed": true
+    },
+    "explainer": {
+      "agent": "explainer",
+      "query": "show risk of main.py",
+      "evidence": {
+        "node": "app/main.py",
+        "risk_score": 0.291,
+        "risk_level": "LOW",
+        "reasons": [
+          "high instability (1.0)"
+        ],
+        "metrics": {
+          "fan_in": 0,
+          "fan_out": 1,
+          "centrality": 0.1,
+          "pagerank": 0.05359757088502381,
+          "blast_radius": 0,
+          "instability": 1.0
+        }
+      },
+      "summary": "app/main.py is classified as LOW risk with a score of 0.291. it depends on 1 modules. Quantum perspective: predicted reliability is relatively low. Key indicators include: high instability (1.0). Quantum reasoning summary: For app/main.py, QSVM classified the module as UNKNOWN, quantum risk level was LOW, QAOA assigned a review priority of 0.000, and overall quantum confidence reached 0.350. Repository health summary: Quantum assessments remain exploratory and should be validated with additional evidence. Repository risk distribution: CRITICAL=0, HIGH=0, MODERATE=0, LOW=1. Explainability level: LOW.",
+      "recommendation": "app/main.py currently presents relatively low repository risk. Consider decomposing responsibilities and reducing dependency concentration in app/main.py.",
+      "confidence": 0.75,
+      "quantum_insights": [
+        {
+          "node": "app/main.py",
+          "risk_energy": 0.0,
+          "qaoa_priority": 0.0,
+          "propagation_score": 0.0,
+          "stationary_probability": 0.0,
+          "repo_influence": 0.0,
+          "reliability_score": 0.0,
+          "uncertainty_score": 0.0,
+          "quantum_confidence": 0.35,
+          "qsvm_classification": "UNKNOWN",
+          "confidence_label": "LOW",
+          "explainability_score": 0.44,
+          "risk_label": "LOW",
+          "explainability_label": "LOW"
+        }
+      ],
+      "quantum_confidence": 0.5,
+      "assessment_performed": true,
+      "repository_health_summary": "Quantum assessments remain exploratory and should be validated with additional evidence.",
+      "explainability_score": 0.44,
+      "narrative_coherence": 0.632,
+      "explanation_coverage": 1.0,
+      "repository_risk_distribution": {
+        "CRITICAL": 0,
+        "HIGH": 0,
+        "MODERATE": 0,
+        "LOW": 1
+      },
+      "dominant_explainability": "LOW"
+    },
+    "consensus_summary": {
+      "review_findings": 4,
+      "critic_objections": 4,
+      "security_issues": 1,
+      "participating_agents": 4,
+      "support_signal": 0.73,
+      "contradiction_penalty": 0.0,
+      "agreement_ratio": 1.0,
+      "evidence_coverage": 0.72,
+      "calibration_score": 0.706,
+      "contradictions": 0,
+      "quantum_consensus": 0.309,
+      "quantum_agreement": 0.658,
+      "quantum_evidence_count": 3,
+      "evidence_factor": 0.75,
+      "consensus_strength": 0.484
+    },
+    "reliability_score": 0.68,
+    "evidence_coverage": 0.72,
+    "calibration_score": 0.706,
+    "agreement_ratio": 1.0,
+    "contradictions": 0,
+    "reliability_breakdown": {
+      "support_signal": 0.728,
+      "evidence_coverage": 0.72,
+      "calibration_score": 0.706,
+      "agreement_ratio": 1.0,
+      "contradictions": 0,
+      "quantum_consensus": 0.309,
+      "quantum_agreement": 0.658,
+      "quantum_evidence_count": 3,
+      "evidence_factor": 0.75,
+      "consensus_strength": 0.484,
+      "formula": {
+        "support_weight": 0.25,
+        "evidence_weight": 0.25,
+        "calibration_weight": 0.15,
+        "agreement_weight": 0.15,
+        "quantum_weight": 0.2
+      }
+    },
+    "verification_status": "LOW_CONFIDENCE",
+    "assessment_performed": true,
+    "confidence": 0.634,
+    "reviewer_confidence": 0.72,
+    "quantum_consensus": 0.309,
+    "quantum_agreement": 0.658,
+    "quantum_assessment_performed": true,
+    "quantum_evidence_count": 3,
+    "consensus_strength": 0.484,
+    "verification_explanation": "Available evidence is insufficient for a highly reliable verification decision.",
+    "reliability_label": "MODERATE",
+    "decision_matrix": {
+      "reliability": "MODERATE",
+      "verification": "LOW_CONFIDENCE",
+      "consensus": 0.484,
+      "agreement": 0.658
+    },
+    "verifier_version": "quantum_v1",
+    "verifier_metadata": {
+      "version": "quantum_v1",
+      "agents_considered": 4,
+      "quantum_enabled": true
+    },
+    "quantum_disagreement": 0.516,
+    "quantum_participation_ratio": 0.75,
+    "reliability_confidence": 0.634
+  },
+  "quantum_enabled": true,
+  "quantum_context": "QuantumContext(nodes={'app/main.py': QuantumNodeContext(node='app/main.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'app/main.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'config/settings.py': QuantumNodeContext(node='config/settings.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'config/settings.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'council/agreement.py': QuantumNodeContext(node='council/agreement.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'council/agreement.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'council/orchestrator.py': QuantumNodeContext(node='council/orchestrator.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'council/orchestrator.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'council/prompts.py': QuantumNodeContext(node='council/prompts.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'council/prompts.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'council/state.py': QuantumNodeContext(node='council/state.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'council/state.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'llm/base_client.py': QuantumNodeContext(node='llm/base_client.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'llm/base_client.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'llm/openrouter_client.py': QuantumNodeContext(node='llm/openrouter_client.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'llm/openrouter_client.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'test_council.py': QuantumNodeContext(node='test_council.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'test_council.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'test_llm_connection.py': QuantumNodeContext(node='test_llm_connection.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'test_llm_connection.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'testing_models.py': QuantumNodeContext(node='testing_models.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'testing_models.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'})}, metadata={'repository_metrics': {'testing_models.py': {'fan_in': 0, 'fan_out': 2, 'centrality': 0.2, 'pagerank': 0.05359757088502381, 'function_count': 2, 'class_count': 0, 'import_count': 3}, 'test_llm_connection.py': {'fan_in': 0, 'fan_out': 2, 'centrality': 0.2, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 3}, 'test_council.py': {'fan_in': 0, 'fan_out': 1, 'centrality': 0.1, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 4}, 'llm/openrouter_client.py': {'fan_in': 3, 'fan_out': 1, 'centrality': 0.4, 'pagerank': 0.12375608074093378, 'function_count': 3, 'class_count': 1, 'import_count': 3}, 'llm/base_client.py': {'fan_in': 0, 'fan_out': 0, 'centrality': 0.0, 'pagerank': 0.05359757088502381, 'function_count': 0, 'class_count': 0, 'import_count': 0}, 'app/main.py': {'fan_in': 0, 'fan_out': 1, 'centrality': 0.1, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 2}, 'council/agreement.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 15, 'class_count': 0, 'import_count': 6}, 'council/prompts.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 8, 'class_count': 0, 'import_count': 0}, 'council/orchestrator.py': {'fan_in': 2, 'fan_out': 5, 'centrality': 0.7000000000000001, 'pagerank': 0.1447132442405146, 'function_count': 2, 'class_count': 0, 'import_count': 9}, 'council/state.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 2, 'class_count': 0, 'import_count': 1}, 'config/settings.py': {'fan_in': 4, 'fan_out': 0, 'centrality': 0.4, 'pagerank': 0.22894808840386766, 'function_count': 0, 'class_count': 0, 'import_count': 2}}, 'dependency_graph': <networkx.classes.digraph.DiGraph object at 0x1049a3390>, 'function_graph': <networkx.classes.digraph.DiGraph object at 0x104976710>, 'knowledge_graph': <networkx.classes.multidigraph.MultiDiGraph object at 0x105f75810>})",
+  "context": {
+    "query": "show risk of main.py",
+    "repository_metrics": {
+      "testing_models.py": {
+        "fan_in": 0,
+        "fan_out": 2,
+        "centrality": 0.2,
+        "pagerank": 0.05359757088502381,
+        "function_count": 2,
+        "class_count": 0,
+        "import_count": 3
+      },
+      "test_llm_connection.py": {
+        "fan_in": 0,
+        "fan_out": 2,
+        "centrality": 0.2,
+        "pagerank": 0.05359757088502381,
+        "function_count": 1,
+        "class_count": 0,
+        "import_count": 3
+      },
+      "test_council.py": {
+        "fan_in": 0,
+        "fan_out": 1,
+        "centrality": 0.1,
+        "pagerank": 0.05359757088502381,
+        "function_count": 1,
+        "class_count": 0,
+        "import_count": 4
+      },
+      "llm/openrouter_client.py": {
+        "fan_in": 3,
+        "fan_out": 1,
+        "centrality": 0.4,
+        "pagerank": 0.12375608074093378,
+        "function_count": 3,
+        "class_count": 1,
+        "import_count": 3
+      },
+      "llm/base_client.py": {
+        "fan_in": 0,
+        "fan_out": 0,
+        "centrality": 0.0,
+        "pagerank": 0.05359757088502381,
+        "function_count": 0,
+        "class_count": 0,
+        "import_count": 0
+      },
+      "app/main.py": {
+        "fan_in": 0,
+        "fan_out": 1,
+        "centrality": 0.1,
+        "pagerank": 0.05359757088502381,
+        "function_count": 1,
+        "class_count": 0,
+        "import_count": 2
+      },
+      "council/agreement.py": {
+        "fan_in": 1,
+        "fan_out": 0,
+        "centrality": 0.1,
+        "pagerank": 0.07819824406318837,
+        "function_count": 15,
+        "class_count": 0,
+        "import_count": 6
+      },
+      "council/prompts.py": {
+        "fan_in": 1,
+        "fan_out": 0,
+        "centrality": 0.1,
+        "pagerank": 0.07819824406318837,
+        "function_count": 8,
+        "class_count": 0,
+        "import_count": 0
+      },
+      "council/orchestrator.py": {
+        "fan_in": 2,
+        "fan_out": 5,
+        "centrality": 0.7000000000000001,
+        "pagerank": 0.1447132442405146,
+        "function_count": 2,
+        "class_count": 0,
+        "import_count": 9
+      },
+      "council/state.py": {
+        "fan_in": 1,
+        "fan_out": 0,
+        "centrality": 0.1,
+        "pagerank": 0.07819824406318837,
+        "function_count": 2,
+        "class_count": 0,
+        "import_count": 1
+      },
+      "config/settings.py": {
+        "fan_in": 4,
+        "fan_out": 0,
+        "centrality": 0.4,
+        "pagerank": 0.22894808840386766,
+        "function_count": 0,
+        "class_count": 0,
+        "import_count": 2
+      }
+    },
+    "dependency_graph": "DiGraph with 11 nodes and 12 edges",
+    "function_graph": "DiGraph with 35 nodes and 46 edges",
+    "knowledge_graph": "MultiDiGraph with 67 nodes and 115 edges",
+    "qaoa_result": null,
+    "qsvm_result": null,
+    "quantum_walk_result": null,
+    "vqnn_result": null,
+    "quantum_context": "QuantumContext(nodes={'app/main.py': QuantumNodeContext(node='app/main.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'app/main.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'config/settings.py': QuantumNodeContext(node='config/settings.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'config/settings.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'council/agreement.py': QuantumNodeContext(node='council/agreement.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'council/agreement.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'council/orchestrator.py': QuantumNodeContext(node='council/orchestrator.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'council/orchestrator.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'council/prompts.py': QuantumNodeContext(node='council/prompts.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'council/prompts.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'council/state.py': QuantumNodeContext(node='council/state.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'council/state.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'llm/base_client.py': QuantumNodeContext(node='llm/base_client.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'llm/base_client.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'llm/openrouter_client.py': QuantumNodeContext(node='llm/openrouter_client.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'llm/openrouter_client.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'test_council.py': QuantumNodeContext(node='test_council.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'test_council.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'test_llm_connection.py': QuantumNodeContext(node='test_llm_connection.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'test_llm_connection.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'}), 'testing_models.py': QuantumNodeContext(node='testing_models.py', risk_energy=0.0, qaoa_priority=0.0, qsvm_classification='UNKNOWN', qsvm_confidence=0.0, propagation_score=0.0, stationary_probability=0.0, reliability_score=0.0, embedding=array([], dtype=float64), metadata={'quantum_ready': True, 'has_qaoa': False, 'has_qsvm': False, 'has_quantum_walk': False, 'has_vqnn': False, 'quantum_modules': [], 'quantum_confidence': 0.35, 'repo_influence': 0.0, 'uncertainty_score': 0.0, 'stationary_probability': 0.0, 'propagation_score': 0.0, 'risk_energy': 0.0, 'qaoa_priority': 0.0, 'qsvm_confidence': 0.0, 'reliability_score': 0.0, 'node': 'testing_models.py', 'qsvm_classification': 'UNKNOWN', 'embedding_dimension': 0, 'summary': 'risk=0.000, priority=0.000, reliability=0.000, confidence=0.350'})}, metadata={'repository_metrics': {'testing_models.py': {'fan_in': 0, 'fan_out': 2, 'centrality': 0.2, 'pagerank': 0.05359757088502381, 'function_count': 2, 'class_count': 0, 'import_count': 3}, 'test_llm_connection.py': {'fan_in': 0, 'fan_out': 2, 'centrality': 0.2, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 3}, 'test_council.py': {'fan_in': 0, 'fan_out': 1, 'centrality': 0.1, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 4}, 'llm/openrouter_client.py': {'fan_in': 3, 'fan_out': 1, 'centrality': 0.4, 'pagerank': 0.12375608074093378, 'function_count': 3, 'class_count': 1, 'import_count': 3}, 'llm/base_client.py': {'fan_in': 0, 'fan_out': 0, 'centrality': 0.0, 'pagerank': 0.05359757088502381, 'function_count': 0, 'class_count': 0, 'import_count': 0}, 'app/main.py': {'fan_in': 0, 'fan_out': 1, 'centrality': 0.1, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 2}, 'council/agreement.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 15, 'class_count': 0, 'import_count': 6}, 'council/prompts.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 8, 'class_count': 0, 'import_count': 0}, 'council/orchestrator.py': {'fan_in': 2, 'fan_out': 5, 'centrality': 0.7000000000000001, 'pagerank': 0.1447132442405146, 'function_count': 2, 'class_count': 0, 'import_count': 9}, 'council/state.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 2, 'class_count': 0, 'import_count': 1}, 'config/settings.py': {'fan_in': 4, 'fan_out': 0, 'centrality': 0.4, 'pagerank': 0.22894808840386766, 'function_count': 0, 'class_count': 0, 'import_count': 2}}, 'dependency_graph': <networkx.classes.digraph.DiGraph object at 0x1049a3390>, 'function_graph': <networkx.classes.digraph.DiGraph object at 0x104976710>, 'knowledge_graph': <networkx.classes.multidigraph.MultiDiGraph object at 0x105f75810>})",
+    "quantum_enabled": true,
+    "quantum_error": null
+  },
+  "quantum_error": null,
+  "framework": "QTrustCode",
+  "framework_version": "quantum_v1",
+  "orchestrator_metadata": {
+    "version": "quantum_v1",
+    "max_workers": 4,
+    "quantum_enabled": true
+  },
+  "pipeline_status": "SUCCESS",
+  "performance": {
+    "agent_execution_seconds": 0.0018,
+    "total_execution_seconds": 0.0025
+  }
+}

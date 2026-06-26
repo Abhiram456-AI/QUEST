@@ -1,0 +1,321 @@
+{
+  "query": "explain fake.py",
+  "reviewer": {
+    "agent": "reviewer",
+    "query": "explain fake.py",
+    "evidence": {
+      "error": "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules"
+    },
+    "findings": [
+      "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules",
+      "Risk assessment was not performed because the requested entity could not be resolved."
+    ],
+    "recommendations": [],
+    "risk_score": 0.0,
+    "confidence": 0.72,
+    "quantum_analysis": null
+  },
+  "critic": {
+    "agent": "critic",
+    "query": "explain fake.py",
+    "evidence": {
+      "error": "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules"
+    },
+    "objections": [],
+    "confidence": 0.5,
+    "quantum_analysis": null,
+    "assessment_performed": false,
+    "challenged_nodes": [
+      "unknown"
+    ],
+    "skepticism_score": 0.0
+  },
+  "security": {
+    "agent": "security",
+    "query": "explain fake.py",
+    "evidence": {
+      "error": "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules"
+    },
+    "issues": [],
+    "impacted_files": [],
+    "security_risk": 0.0,
+    "confidence": 0.5,
+    "propagation_hotspots": [],
+    "critical_modules": [],
+    "high_impact_modules": [],
+    "quantum_security_score": 0.0,
+    "quantum_analysis": {
+      "propagation_hotspots": [],
+      "critical_modules": [],
+      "high_impact_modules": [],
+      "quantum_security_score": 0.0,
+      "cascade_risk": 0.0,
+      "review_priority_modules": [],
+      "risk_zone": "LOW"
+    },
+    "risk_zone": "LOW",
+    "cascade_risk": 0.0,
+    "review_priority_modules": [],
+    "assessment_performed": false
+  },
+  "explainer": {
+    "agent": "explainer",
+    "query": "explain fake.py",
+    "evidence": {
+      "error": "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules"
+    },
+    "summary": "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules",
+    "recommendation": "No risk assessment could be performed because the requested entity could not be resolved.",
+    "confidence": 0.72
+  },
+  "verifier": {
+    "agent": "verifier",
+    "reviewer": {
+      "agent": "reviewer",
+      "query": "explain fake.py",
+      "evidence": {
+        "error": "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules"
+      },
+      "findings": [
+        "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules",
+        "Risk assessment was not performed because the requested entity could not be resolved."
+      ],
+      "recommendations": [],
+      "risk_score": 0.0,
+      "confidence": 0.72,
+      "quantum_analysis": null
+    },
+    "critic": {
+      "agent": "critic",
+      "query": "explain fake.py",
+      "evidence": {
+        "error": "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules"
+      },
+      "objections": [],
+      "confidence": 0.5,
+      "quantum_analysis": null,
+      "assessment_performed": false,
+      "challenged_nodes": [
+        "unknown"
+      ],
+      "skepticism_score": 0.0
+    },
+    "security": {
+      "agent": "security",
+      "query": "explain fake.py",
+      "evidence": {
+        "error": "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules"
+      },
+      "issues": [],
+      "impacted_files": [],
+      "security_risk": 0.0,
+      "confidence": 0.5,
+      "propagation_hotspots": [],
+      "critical_modules": [],
+      "high_impact_modules": [],
+      "quantum_security_score": 0.0,
+      "quantum_analysis": {
+        "propagation_hotspots": [],
+        "critical_modules": [],
+        "high_impact_modules": [],
+        "quantum_security_score": 0.0,
+        "cascade_risk": 0.0,
+        "review_priority_modules": [],
+        "risk_zone": "LOW"
+      },
+      "risk_zone": "LOW",
+      "cascade_risk": 0.0,
+      "review_priority_modules": [],
+      "assessment_performed": false
+    },
+    "explainer": {
+      "agent": "explainer",
+      "query": "explain fake.py",
+      "evidence": {
+        "error": "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules"
+      },
+      "summary": "Unknown query. Supported commands: show dependencies for <file>, show dependents for <file>, show dependencies of <file>, show dependents of <file>, what depends on <file>, what does <file> depend on, show dependency chain of <file>,show dependents for <file>,show callers of <function>, show callees of <function>, where is function <function>, find path from <file> to <file>, show impact of <file>, show impacted by <file>,blast radius of <file>, criticality of <file>, show ancestors of <file>, show descendants of <file>, explain file <file>, explain function <function>, trace execution of <function>, find execution path from <function> to <function>, show dead files, show entry points, show hotspots, show central files, show important files, what are the most important files, why is <file> important, show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules",
+      "recommendation": "No risk assessment could be performed because the requested entity could not be resolved.",
+      "confidence": 0.72
+    },
+    "consensus_summary": {
+      "review_findings": 2,
+      "critic_objections": 0,
+      "security_issues": 0,
+      "participating_agents": 4,
+      "support_signal": 0.61,
+      "contradiction_penalty": 0.0,
+      "agreement_ratio": 1.0,
+      "evidence_coverage": 0.0,
+      "calibration_score": 0.0,
+      "contradictions": 0,
+      "quantum_consensus": 0.0,
+      "quantum_agreement": 0.0,
+      "quantum_evidence_count": 0,
+      "quantum_assessment_performed": false,
+      "evidence_factor": 0.0,
+      "consensus_strength": 0.0
+    },
+    "reliability_score": 0.61,
+    "evidence_coverage": 0.0,
+    "calibration_score": 0.0,
+    "agreement_ratio": 1.0,
+    "contradictions": 0,
+    "reliability_breakdown": {
+      "support_signal": 0.61,
+      "evidence_coverage": 0.0,
+      "calibration_score": 0.0,
+      "agreement_ratio": 1.0,
+      "contradictions": 0
+    },
+    "verification_status": "UNRESOLVED",
+    "assessment_performed": false,
+    "confidence": 0.61,
+    "consensus_strength": 0.0,
+    "verification_explanation": "No assessment could be performed because the requested entity could not be resolved.",
+    "reliability_label": "LOW",
+    "quantum_disagreement": 1.0,
+    "quantum_participation_ratio": 0.0,
+    "reliability_confidence": 0.0,
+    "decision_matrix": {
+      "reliability": "LOW",
+      "verification": "UNRESOLVED",
+      "consensus": 0.0,
+      "agreement": 0.0
+    },
+    "verifier_metadata": {
+      "version": "quantum_v1",
+      "agents_considered": 4,
+      "quantum_enabled": true
+    }
+  },
+  "quantum_enabled": true,
+  "quantum_context": "QuantumContext(nodes={}, metadata={'repository_metrics': {'testing_models.py': {'fan_in': 0, 'fan_out': 2, 'centrality': 0.2, 'pagerank': 0.05359757088502381, 'function_count': 2, 'class_count': 0, 'import_count': 3}, 'test_llm_connection.py': {'fan_in': 0, 'fan_out': 2, 'centrality': 0.2, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 3}, 'test_council.py': {'fan_in': 0, 'fan_out': 1, 'centrality': 0.1, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 4}, 'llm/openrouter_client.py': {'fan_in': 3, 'fan_out': 1, 'centrality': 0.4, 'pagerank': 0.12375608074093378, 'function_count': 3, 'class_count': 1, 'import_count': 3}, 'llm/base_client.py': {'fan_in': 0, 'fan_out': 0, 'centrality': 0.0, 'pagerank': 0.05359757088502381, 'function_count': 0, 'class_count': 0, 'import_count': 0}, 'app/main.py': {'fan_in': 0, 'fan_out': 1, 'centrality': 0.1, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 2}, 'council/agreement.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 15, 'class_count': 0, 'import_count': 6}, 'council/prompts.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 8, 'class_count': 0, 'import_count': 0}, 'council/orchestrator.py': {'fan_in': 2, 'fan_out': 5, 'centrality': 0.7000000000000001, 'pagerank': 0.1447132442405146, 'function_count': 2, 'class_count': 0, 'import_count': 9}, 'council/state.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 2, 'class_count': 0, 'import_count': 1}, 'config/settings.py': {'fan_in': 4, 'fan_out': 0, 'centrality': 0.4, 'pagerank': 0.22894808840386766, 'function_count': 0, 'class_count': 0, 'import_count': 2}}, 'dependency_graph': <networkx.classes.digraph.DiGraph object at 0x107040810>, 'function_graph': <networkx.classes.digraph.DiGraph object at 0x107a58490>, 'knowledge_graph': <networkx.classes.multidigraph.MultiDiGraph object at 0x107eb25d0>})",
+  "context": {
+    "query": "explain fake.py",
+    "repository_metrics": {
+      "testing_models.py": {
+        "fan_in": 0,
+        "fan_out": 2,
+        "centrality": 0.2,
+        "pagerank": 0.05359757088502381,
+        "function_count": 2,
+        "class_count": 0,
+        "import_count": 3
+      },
+      "test_llm_connection.py": {
+        "fan_in": 0,
+        "fan_out": 2,
+        "centrality": 0.2,
+        "pagerank": 0.05359757088502381,
+        "function_count": 1,
+        "class_count": 0,
+        "import_count": 3
+      },
+      "test_council.py": {
+        "fan_in": 0,
+        "fan_out": 1,
+        "centrality": 0.1,
+        "pagerank": 0.05359757088502381,
+        "function_count": 1,
+        "class_count": 0,
+        "import_count": 4
+      },
+      "llm/openrouter_client.py": {
+        "fan_in": 3,
+        "fan_out": 1,
+        "centrality": 0.4,
+        "pagerank": 0.12375608074093378,
+        "function_count": 3,
+        "class_count": 1,
+        "import_count": 3
+      },
+      "llm/base_client.py": {
+        "fan_in": 0,
+        "fan_out": 0,
+        "centrality": 0.0,
+        "pagerank": 0.05359757088502381,
+        "function_count": 0,
+        "class_count": 0,
+        "import_count": 0
+      },
+      "app/main.py": {
+        "fan_in": 0,
+        "fan_out": 1,
+        "centrality": 0.1,
+        "pagerank": 0.05359757088502381,
+        "function_count": 1,
+        "class_count": 0,
+        "import_count": 2
+      },
+      "council/agreement.py": {
+        "fan_in": 1,
+        "fan_out": 0,
+        "centrality": 0.1,
+        "pagerank": 0.07819824406318837,
+        "function_count": 15,
+        "class_count": 0,
+        "import_count": 6
+      },
+      "council/prompts.py": {
+        "fan_in": 1,
+        "fan_out": 0,
+        "centrality": 0.1,
+        "pagerank": 0.07819824406318837,
+        "function_count": 8,
+        "class_count": 0,
+        "import_count": 0
+      },
+      "council/orchestrator.py": {
+        "fan_in": 2,
+        "fan_out": 5,
+        "centrality": 0.7000000000000001,
+        "pagerank": 0.1447132442405146,
+        "function_count": 2,
+        "class_count": 0,
+        "import_count": 9
+      },
+      "council/state.py": {
+        "fan_in": 1,
+        "fan_out": 0,
+        "centrality": 0.1,
+        "pagerank": 0.07819824406318837,
+        "function_count": 2,
+        "class_count": 0,
+        "import_count": 1
+      },
+      "config/settings.py": {
+        "fan_in": 4,
+        "fan_out": 0,
+        "centrality": 0.4,
+        "pagerank": 0.22894808840386766,
+        "function_count": 0,
+        "class_count": 0,
+        "import_count": 2
+      }
+    },
+    "dependency_graph": "DiGraph with 11 nodes and 12 edges",
+    "function_graph": "DiGraph with 35 nodes and 46 edges",
+    "knowledge_graph": "MultiDiGraph with 67 nodes and 115 edges",
+    "qaoa_result": null,
+    "qsvm_result": null,
+    "quantum_walk_result": null,
+    "vqnn_result": null,
+    "quantum_context": "QuantumContext(nodes={}, metadata={'repository_metrics': {'testing_models.py': {'fan_in': 0, 'fan_out': 2, 'centrality': 0.2, 'pagerank': 0.05359757088502381, 'function_count': 2, 'class_count': 0, 'import_count': 3}, 'test_llm_connection.py': {'fan_in': 0, 'fan_out': 2, 'centrality': 0.2, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 3}, 'test_council.py': {'fan_in': 0, 'fan_out': 1, 'centrality': 0.1, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 4}, 'llm/openrouter_client.py': {'fan_in': 3, 'fan_out': 1, 'centrality': 0.4, 'pagerank': 0.12375608074093378, 'function_count': 3, 'class_count': 1, 'import_count': 3}, 'llm/base_client.py': {'fan_in': 0, 'fan_out': 0, 'centrality': 0.0, 'pagerank': 0.05359757088502381, 'function_count': 0, 'class_count': 0, 'import_count': 0}, 'app/main.py': {'fan_in': 0, 'fan_out': 1, 'centrality': 0.1, 'pagerank': 0.05359757088502381, 'function_count': 1, 'class_count': 0, 'import_count': 2}, 'council/agreement.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 15, 'class_count': 0, 'import_count': 6}, 'council/prompts.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 8, 'class_count': 0, 'import_count': 0}, 'council/orchestrator.py': {'fan_in': 2, 'fan_out': 5, 'centrality': 0.7000000000000001, 'pagerank': 0.1447132442405146, 'function_count': 2, 'class_count': 0, 'import_count': 9}, 'council/state.py': {'fan_in': 1, 'fan_out': 0, 'centrality': 0.1, 'pagerank': 0.07819824406318837, 'function_count': 2, 'class_count': 0, 'import_count': 1}, 'config/settings.py': {'fan_in': 4, 'fan_out': 0, 'centrality': 0.4, 'pagerank': 0.22894808840386766, 'function_count': 0, 'class_count': 0, 'import_count': 2}}, 'dependency_graph': <networkx.classes.digraph.DiGraph object at 0x107040810>, 'function_graph': <networkx.classes.digraph.DiGraph object at 0x107a58490>, 'knowledge_graph': <networkx.classes.multidigraph.MultiDiGraph object at 0x107eb25d0>})",
+    "quantum_enabled": true,
+    "quantum_error": null
+  },
+  "quantum_error": null,
+  "framework": "QTrustCode",
+  "framework_version": "quantum_v1",
+  "orchestrator_metadata": {
+    "version": "quantum_v1",
+    "max_workers": 4,
+    "quantum_enabled": true
+  },
+  "pipeline_status": "SUCCESS",
+  "performance": {
+    "agent_execution_seconds": 0.001,
+    "total_execution_seconds": 0.0011
+  }
+}

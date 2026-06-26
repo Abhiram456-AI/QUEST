@@ -1,6 +1,10 @@
 import json
+from pprint import pprint
+import time
 from collections import defaultdict
 from dataclasses import asdict
+from pathlib import Path
+from datetime import datetime
 
 from parser.repository_parser import (
     RepositoryParser,
@@ -43,13 +47,41 @@ from agents.orchestrator import (
 
 if __name__ == "__main__":
     repository_path = input("Repository Path: ")
+    repository_path = repository_path.strip()
+
+    if not repository_path:
+        raise ValueError(
+            "Repository path cannot be empty."
+        )
+
+    repository_path = str(
+        Path(repository_path).expanduser()
+    )
+    if not Path(repository_path).exists():
+        raise FileNotFoundError(
+            f"Repository does not exist: {repository_path}"
+        )
 
     parser = RepositoryParser(repository_path)
 
+    print("\nParsing repository...\n")
     repository = parser.parse()
+    print(
+        f"Parsed {len(repository.files)} files."
+    )
+    if not repository.files:
+        raise ValueError(
+            "No parsable source files were found in the repository."
+        )
 
     builder = DependencyGraphBuilder()
     graph = builder.build(repository)
+    print(
+        f"Dependency Nodes: {graph.number_of_nodes()}"
+    )
+    print(
+        f"Dependency Edges: {graph.number_of_edges()}"
+    )
 
     print("\nDEPENDENCY EDGES:\n")
 
@@ -136,23 +168,150 @@ if __name__ == "__main__":
     )
     orchestrator = AgentOrchestrator(query_engine)
 
+    print("\nQTRUSTCODE QUANTUM FRAMEWORK READY")
+    print(f"Framework: QTrustCode")
+    print(f"Version: {orchestrator.VERSION}")
+    print(
+        f"Workers: {orchestrator.max_workers}"
+    )
+
     print("\nQUERY ENGINE READY")
     print("Type 'exit' to quit.\n")
+    last_result = None
+    session_queries = 0
 
     while True:
         query = input("QTrustCode > ").strip()
+
+        if query.lower() == "help":
+            print(
+                "\nExamples:"
+                "\n- show risk of main.py"
+                "\n- explain authentication.py"
+                "\n- show dependencies of orchestrator.py"
+                "\n- show impact of parser.py"
+                "\n- show execution flow of main.py"
+                "\n- explain security risks of authentication.py"
+                "\n- save last"
+                "\n"
+            )
+            continue
+
+        if query.lower() == "save last":
+            if last_result is None:
+                print(
+                    "No previous result available."
+                )
+                continue
+
+            filename = (
+                f"qtrustcode_result_"
+                f"{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+                f".json"
+            )
+
+            with open(
+                filename,
+                "w",
+                encoding="utf-8",
+            ) as fp:
+                json.dump(
+                    last_result,
+                    fp,
+                    indent=2,
+                    default=str,
+                )
+
+            print(
+                f"Saved results to {filename}"
+            )
+            continue
 
         if query.lower() in {
             "exit",
             "quit",
         }:
+            print("\nQTrustCode session ended.")
+            print(
+                f"Queries processed: {session_queries}"
+            )
             break
 
         if not query:
             continue
 
-        result = orchestrator.analyze(query)
+        session_queries += 1
+        start = time.perf_counter()
+        try:
+            result = orchestrator.analyze(query)
+        except Exception as exc:
+            print(f"\nERROR: {exc}\n")
+            continue
+        last_result = result
+        elapsed = round(
+            time.perf_counter() - start,
+            4,
+        )
 
-        print("\nRESULT:")
-        print(result)
+        print(
+            f"\nRESULT [{datetime.now().strftime('%H:%M:%S')}]"
+        )
+        print("-" * 80)
+        pprint(result)
+
+        metadata = result.get(
+            "orchestrator_metadata",
+            {},
+        )
+        verification = result.get(
+            "verification",
+            {},
+        )
+
+        if metadata:
+            print(
+                f"Framework Version: "
+                f"{metadata.get('version')}"
+            )
+
+        print(
+            f"\nPipeline Status: "
+            f"{result.get('pipeline_status')}"
+        )
+        print(
+            f"Quantum Enabled: "
+            f"{result.get('quantum_enabled')}"
+        )
+        if verification:
+            print(
+                f"Verification Status: "
+                f"{verification.get('verification_status', verification.get('status'))}"
+            )
+            print(
+                f"Reliability Score: "
+                f"{verification.get('reliability_score', 'N/A')}"
+            )
+
+        performance = result.get(
+            "performance",
+            {},
+        )
+
+        if performance:
+            print(
+                "Agent Execution: "
+                f"{performance.get('agent_execution_seconds', 0.0)}s"
+            )
+            print(
+                "Total Execution: "
+                f"{performance.get('total_execution_seconds', elapsed)}s"
+            )
+        else:
+            print(
+                f"Total Execution: {elapsed}s"
+            )
+
+        print(
+            f"Session Queries: {session_queries}"
+        )
         print()

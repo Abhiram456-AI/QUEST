@@ -1,3 +1,4 @@
+
 class QueryEngine:
     def __init__(
         self,
@@ -21,6 +22,17 @@ class QueryEngine:
         self.metrics = metrics or {}
         # Backward-compatible aliases used by the multi-agent layer
         self.repository_metrics = self.metrics
+
+        files = getattr(
+            self.repository,
+            "files",
+            self.repository,
+        )
+
+        if hasattr(files, "keys"):
+            self.repository_nodes = sorted(files.keys())
+        else:
+            self.repository_nodes = sorted(files)
         self.graph = self.dependency_graph
         self.dependency_path_engine = (
             dependency_path_engine
@@ -55,10 +67,33 @@ class QueryEngine:
             "risk_engine": self.risk_engine,
             "execution_engine": self.execution_engine,
         }
+        # Default quantum context entries for integration
+        self.context.setdefault("qaoa_result", None)
+        self.context.setdefault("qsvm_result", None)
+        self.context.setdefault("quantum_walk_result", None)
+        self.context.setdefault("vqnn_result", None)
+        self.context.setdefault("quantum_enabled", False)
+        # Instance attributes for quantum result synchronization
+        self.qaoa_result = None
+        self.qsvm_result = None
+        self.quantum_walk_result = None
+        self.vqnn_result = None
         self._function_graph_stats = {
-            "nodes": self.function_graph.number_of_nodes(),
-            "edges": self.function_graph.number_of_edges(),
+            "nodes": (
+                self.function_graph.number_of_nodes()
+                if self.function_graph is not None else 0
+            ),
+            "edges": (
+                self.function_graph.number_of_edges()
+                if self.function_graph is not None else 0
+            ),
         }
+        self.context["repository_nodes"] = (
+            self.repository_nodes
+        )
+        self.context["repository_node_count"] = len(
+            self.repository_nodes
+        )
 
     def resolve_file(
         self,
@@ -120,6 +155,8 @@ class QueryEngine:
     ):
         target = target.strip()
         normalized = target.lower()
+        if self.function_graph is None:
+            return None
 
         graph_nodes = list(self.function_graph.nodes)
 
@@ -251,11 +288,13 @@ class QueryEngine:
         return self.find_definition(
             function_name.split(":")[-1]
         )
-
+    
     def find_definition(
         self,
         function_name,
     ):
+        if self.knowledge_graph is None:
+            return None
         for node in self.knowledge_graph.nodes:
             if node.endswith(
                 f":{function_name}"
@@ -291,9 +330,17 @@ class QueryEngine:
 
         trace = {}
 
-        for callee in self.find_callees(
+        callees = self.find_callees(
             start_function
-        ):
+        )
+
+        if isinstance(callees, dict):
+            callees = callees.get(
+                "callees",
+                [],
+            )
+
+        for callee in callees:
             trace[callee] = self.trace_execution(
                 callee,
                 visited,
@@ -330,7 +377,13 @@ class QueryEngine:
         self,
         file_path,
     ):
-        file_data = self.repository.files.get(
+        files = getattr(
+            self.repository,
+            "files",
+            self.repository,
+        )
+
+        file_data = files.get(
             file_path
         )
 
@@ -497,7 +550,6 @@ class QueryEngine:
             "show dependents of <file>",
             "what depends on <file>",
             "what does <file> depend on",
-            "show dependency chain of <file>",
             "show callers of <function>",
             "show callees of <function>",
             "where is function <function>",
@@ -529,7 +581,58 @@ class QueryEngine:
             "most risky modules",
             "top risky modules",
             "repository risk summary",
+            "explain <file>",
+            "risk of <file>",
         ]
+
+    def get_repository_nodes(self):
+        return list(self.repository_nodes)
+    
+    
+    def get_context(self):
+        # Copy context and synchronize quantum results
+        context = dict(self.context)
+        # Synchronize quantum result attributes into context copy
+        for name in ("qaoa_result", "qsvm_result", "quantum_walk_result", "vqnn_result"):
+            value = getattr(self, name, None)
+            if value is not None:
+                context[name] = value
+        context["quantum_enabled"] = any(
+            context.get(name) is not None
+            for name in (
+                "qaoa_result",
+                "qsvm_result",
+                "quantum_walk_result",
+                "vqnn_result",
+            )
+        )
+        context["repository_nodes"] = list(self.repository_nodes)
+        context["repository_node_count"] = len(self.repository_nodes)
+        return context
+
+    def update_quantum_results(
+        self,
+        qaoa_result=None,
+        qsvm_result=None,
+        quantum_walk_result=None,
+        vqnn_result=None,
+    ):
+        """Synchronize quantum module outputs into the shared query context."""
+        updates = {
+            "qaoa_result": qaoa_result,
+            "qsvm_result": qsvm_result,
+            "quantum_walk_result": quantum_walk_result,
+            "vqnn_result": vqnn_result,
+        }
+        for name, value in updates.items():
+            if value is not None:
+                setattr(self, name, value)
+                self.context[name] = value
+        self.context["quantum_enabled"] = any(
+            self.context.get(name) is not None
+            for name in updates
+        )
+        return self.context
 
     def explain_path(
         self,
@@ -710,26 +813,24 @@ class QueryEngine:
             "show impacted by ": "show impact of ",
             "what depends on ": "show dependents for ",
             "show instability for ": "show instability of ",
-            "show coupling for ":"show coupling of ",
+            "show coupling for ": "show coupling of ",
             "show risk for ": "show risk of ",
             "highest risk modules": "show risky modules",
             "most risky modules": "show risky modules",
             "top risky modules": "show risky modules",
+            "explain ": "explain file ",
+            "risk of ": "show risk of ",
+            "dependencies of ": "show dependencies for ",
+            "dependents of ": "show dependents for ",
         }
         for alias, canonical in aliases.items():
             if query.startswith(alias):
                 return canonical + text[len(alias):]
-            if (
-                query.startswith("what does ") 
-                and query.endswith(" depend on")
-            ):
-                target = text[
-                    len("what does "):
-                    -len(" depend on")
-                ].strip()
-                return (
-                    f"show dependencies for {target}"
-                )
+
+        if query.startswith("what does ") and query.endswith(" depend on"):
+            target = text[len("what does "):-len(" depend on")].strip()
+            return f"show dependencies for {target}"
+
         return text
 
     def query(
@@ -738,6 +839,7 @@ class QueryEngine:
     ):
         text = self.normalize_aliases(text)
         query = text.lower().strip()
+        self.context["last_query"] = text
         if query == "help":
             return self.supported_commands()
 
@@ -1008,33 +1110,6 @@ class QueryEngine:
             )
 
         return {
-            "error": (
-                "Unknown query. Supported commands: "
-                "show dependencies for <file>, "
-                "show dependents for <file>, "
-                "show dependencies of <file>, "
-                "show dependents of <file>, "
-                "what depends on <file>, "
-                "what does <file> depend on, "
-                "show dependency chain of <file>,"
-                "show dependents for <file>,"
-                "show callers of <function>, "
-                "show callees of <function>, "
-                "where is function <function>, "
-                "find path from <file> to <file>, "
-                "show impact of <file>, "
-                "show impacted by <file>,"
-                "blast radius of <file>, "
-                "criticality of <file>, "
-                "show ancestors of <file>, "
-                "show descendants of <file>, "
-                "explain file <file>, "
-                "explain function <function>, "
-                "trace execution of <function>, "
-                "find execution path from <function> to <function>, "
-                "show dead files, show entry points, show hotspots, "
-                "show central files, show important files, "
-                "what are the most important files, why is <file> important, "
-                "show risk of <file>, show risky modules, highest risk modules, most risky modules, top risky modules, repository risk summary, high risk modules"
-            )
+            "error": "Unknown query.",
+            "supported_commands": self.supported_commands(),
         }
