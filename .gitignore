@@ -1,10 +1,27 @@
-venv/
+# Python
 __pycache__/
 *.pyc
-.env
-.idea/
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+env/
+
+# IDE
 .vscode/
-*.DS_Store
-datasets/
-.cache/
-*.log
+.idea/
+
+# QUEST generated artifacts
+outputs/
+
+# OS
+.DS_Store
+
+# Testing/cache
+.pytest_cache/
+.mypy_cache/
+
+# Build
+dist/
+build/

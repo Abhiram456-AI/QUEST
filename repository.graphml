@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d1" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="file:repository_scanner.py">
+      <data key="d0">file</data>
+    </node>
+    <node id="class:FileMetadata">
+      <data key="d0">class</data>
+    </node>
+    <node id="class:RepositoryMetadata">
+      <data key="d0">class</data>
+    </node>
+    <node id="class:RepositoryScanner">
+      <data key="d0">class</data>
+    </node>
+    <node id="function:__init__">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:Path">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:exists">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:FileNotFoundError">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:scan">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:rglob">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:_should_ignore">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:is_file">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:_analyze_file">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:append">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:asdict">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:get">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:RepositoryMetadata">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:len">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:read_text">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:splitlines">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:strip">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:FileMetadata">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:str">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:relative_to">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:getsize">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:_hash_file">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:sha256">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:open">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:read">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:update">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:hexdigest">
+      <data key="d0">function</data>
+    </node>
+    <node id="function:any">
+      <data key="d0">function</data>
+    </node>
+    <edge source="file:repository_scanner.py" target="class:FileMetadata">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="class:RepositoryMetadata">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="class:RepositoryScanner">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:__init__">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:Path">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:exists">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:FileNotFoundError">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:scan">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:rglob">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:_should_ignore">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:is_file">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:_analyze_file">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:append">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:asdict">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:get">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:RepositoryMetadata">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:len">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:read_text">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:splitlines">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:strip">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:FileMetadata">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:str">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:relative_to">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:getsize">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:_hash_file">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:sha256">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:open">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:read">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:update">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:hexdigest">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="file:repository_scanner.py" target="function:any">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="class:RepositoryScanner" target="function:__init__">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="class:RepositoryScanner" target="function:scan">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="class:RepositoryScanner" target="function:_analyze_file">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="class:RepositoryScanner" target="function:_hash_file">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="class:RepositoryScanner" target="function:_should_ignore">
+      <data key="d1">contains</data>
+    </edge>
+    <edge source="function:__init__" target="function:Path">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:__init__" target="function:exists">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:__init__" target="function:FileNotFoundError">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:scan" target="function:rglob">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:scan" target="function:_should_ignore">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:scan" target="function:is_file">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:scan" target="function:_analyze_file">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:scan" target="function:append">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:scan" target="function:asdict">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:scan" target="function:get">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:scan" target="function:RepositoryMetadata">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:scan" target="function:len">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_should_ignore" target="function:any">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_analyze_file" target="function:read_text">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_analyze_file" target="function:len">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_analyze_file" target="function:splitlines">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_analyze_file" target="function:strip">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_analyze_file" target="function:FileMetadata">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_analyze_file" target="function:str">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_analyze_file" target="function:relative_to">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_analyze_file" target="function:getsize">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_analyze_file" target="function:_hash_file">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_hash_file" target="function:sha256">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_hash_file" target="function:open">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_hash_file" target="function:read">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_hash_file" target="function:update">
+      <data key="d1">calls</data>
+    </edge>
+    <edge source="function:_hash_file" target="function:hexdigest">
+      <data key="d1">calls</data>
+    </edge>
+  </graph>
+</graphml>
