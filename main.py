@@ -34,6 +34,10 @@ from quest.intelligence.dependency_analyzer import DependencyAnalyzer
 from quest.intelligence.call_graph import CallGraphBuilder
 from quest.intelligence.code_metrics import CodeMetricsAnalyzer
 
+from quest.trust.feature_extractor import TrustFeatureExtractor
+from quest.trust.trust_vector import TrustVectorBuilder
+from quest.trust.dataset_builder import DatasetBuilder
+
 
 OUTPUT_DIR = "outputs"
 
@@ -175,6 +179,94 @@ class QUESTEngine:
         return intelligence_report
 
 
+    def execute_phase_two(self):
+        """
+        Runs the complete Trust Representation Engine.
+
+        Converts Repository Intelligence output into:
+        - normalized trust features
+        - QUEST Trust Vectors
+        - ML/Quantum ready datasets
+        """
+
+        print("QUEST Phase 2 Started")
+
+        intelligence_path = (
+            Path(OUTPUT_DIR)
+            / "repository_intelligence.json"
+        )
+
+        trust_features_path = (
+            Path(OUTPUT_DIR)
+            / "trust_features.json"
+        )
+
+        trust_vectors_path = (
+            Path(OUTPUT_DIR)
+            / "trust_vectors.json"
+        )
+
+        dataset_path = (
+            Path(OUTPUT_DIR)
+            / "quest_dataset.json"
+        )
+
+
+        feature_extractor = TrustFeatureExtractor()
+
+        features = feature_extractor.extract(
+            str(intelligence_path)
+        )
+
+        feature_extractor.save_features(
+            features,
+            str(trust_features_path)
+        )
+
+        print(
+            f"Generated Trust Features: {trust_features_path}"
+        )
+
+
+        vector_builder = TrustVectorBuilder()
+
+        vectors = vector_builder.build_from_file(
+            str(trust_features_path)
+        )
+
+        vector_builder.save_vectors(
+            vectors,
+            str(trust_vectors_path)
+        )
+
+        print(
+            f"Generated Trust Vectors: {trust_vectors_path}"
+        )
+
+
+        dataset_builder = DatasetBuilder()
+
+        dataset = dataset_builder.build(
+            str(trust_vectors_path)
+        )
+
+        dataset_builder.save_json(
+            dataset,
+            str(dataset_path)
+        )
+
+        dataset_builder.export_numpy(
+            dataset,
+            "datasets"
+        )
+
+        print(
+            "QUEST Dataset Generated"
+        )
+
+        return dataset
+
+
 
 def main():
 
@@ -195,6 +287,7 @@ def main():
     )
 
     engine.execute_phase_one()
+    engine.execute_phase_two()
 
 
 if __name__ == "__main__":
