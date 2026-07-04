@@ -43,6 +43,8 @@ from quest.quantum.quantum_walk import QuantumWalkEngine
 from quest.quantum.qaoa_optimizer import QUESTQAOAOptimizer
 from quest.quantum.qvnn_predictor import QUESTQVNNPredictor
 
+from quest.agents.agent_orchestrator import AgentOrchestrator
+
 
 OUTPUT_DIR = "outputs"
 
@@ -353,6 +355,38 @@ class QUESTEngine:
         print("QUEST Phase 3 Completed")
 
 
+    def execute_phase_four(self):
+        """
+        Runs the complete Autonomous Multi-Agent Verification Framework.
+
+        Executes:
+        - Reviewer Agent
+        - Security Agent
+        - Quantum Agent
+        - Critic Agent
+        - Verifier Agent
+        - Explainer Agent
+        """
+
+        print("QUEST Phase 4 Started")
+
+        orchestrator = AgentOrchestrator()
+
+        verification_results = orchestrator.execute()
+
+        orchestrator.save_results(
+            verification_results
+        )
+
+        print(
+            "QUEST Autonomous Agent Verification Completed"
+        )
+
+        print("QUEST Phase 4 Completed")
+
+        return verification_results
+
+
 
 def main():
 
@@ -375,6 +409,7 @@ def main():
     engine.execute_phase_one()
     engine.execute_phase_two()
     engine.execute_phase_three()
+    engine.execute_phase_four()
 
 
 if __name__ == "__main__":
