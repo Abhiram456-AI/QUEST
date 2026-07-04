@@ -38,6 +38,11 @@ from quest.trust.feature_extractor import TrustFeatureExtractor
 from quest.trust.trust_vector import TrustVectorBuilder
 from quest.trust.dataset_builder import DatasetBuilder
 
+from quest.quantum.qsvm_classifier import QUESTQSVMClassifier
+from quest.quantum.quantum_walk import QuantumWalkEngine
+from quest.quantum.qaoa_optimizer import QUESTQAOAOptimizer
+from quest.quantum.qvnn_predictor import QUESTQVNNPredictor
+
 
 OUTPUT_DIR = "outputs"
 
@@ -267,6 +272,87 @@ class QUESTEngine:
         return dataset
 
 
+    def execute_phase_three(self):
+        """
+        Runs the complete Quantum Trust Intelligence Engine.
+
+        Executes:
+        - QSVM Trust Classification
+        - Quantum Walk Risk Propagation
+        - QAOA Reliability Optimization
+        - QVNN Reliability Prediction
+        """
+
+        print("QUEST Phase 3 Started")
+
+
+        quantum_output = (
+            Path(OUTPUT_DIR)
+            / "quantum_results"
+        )
+
+        quantum_output.mkdir(
+            parents=True,
+            exist_ok=True
+        )
+
+
+        qsvm = QUESTQSVMClassifier()
+
+        qsvm_result = qsvm.train_and_evaluate(
+            "datasets/X.npy",
+            "datasets/y.npy"
+        )
+
+        qsvm.save_results(
+            qsvm_result,
+            str(quantum_output / "qsvm_results.json")
+        )
+
+        print("QSVM Trust Classification Completed")
+
+
+        quantum_walk = QuantumWalkEngine()
+
+        quantum_walk.analyze_repository(
+            str(Path(OUTPUT_DIR) / "repository_intelligence.json"),
+            str(quantum_output / "quantum_walk_results.json")
+        )
+
+        print("Quantum Walk Risk Propagation Completed")
+
+
+        qaoa = QUESTQAOAOptimizer()
+
+        qaoa_results = qaoa.optimize(
+            str(Path(OUTPUT_DIR) / "trust_vectors.json"),
+            str(quantum_output / "quantum_walk_results.json")
+        )
+
+        qaoa.save_results(
+            qaoa_results,
+            str(quantum_output / "qaoa_results.json")
+        )
+
+        print("QAOA Reliability Optimization Completed")
+
+
+        qvnn = QUESTQVNNPredictor()
+
+        qvnn_results = qvnn.predict(
+            "datasets/X.npy"
+        )
+
+        qvnn.save_results(
+            qvnn_results,
+            str(quantum_output / "qvnn_results.json")
+        )
+
+        print("QVNN Reliability Prediction Completed")
+
+        print("QUEST Phase 3 Completed")
+
+
 
 def main():
 
@@ -288,6 +374,7 @@ def main():
 
     engine.execute_phase_one()
     engine.execute_phase_two()
+    engine.execute_phase_three()
 
 
 if __name__ == "__main__":
