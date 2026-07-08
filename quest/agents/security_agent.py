@@ -73,28 +73,25 @@ class SecurityAgent(BaseAgent):
 
 
         for component in trust_vectors:
-
             file_path = component.get(
                 "file_path",
                 "unknown"
             )
-
             vector = component.get(
                 "vector",
                 [0, 0, 0, 0]
             )
-
+            trust_score = component.get("trust_score", 0.0)
 
             security_risk = vector[2]
             dependency_factor = vector[1]
 
-
             if security_risk > 0.25:
-
                 confidence = self.calculate_confidence(
                     [
                         security_risk,
-                        dependency_factor
+                        dependency_factor,
+                        1.0 - trust_score
                     ]
                 )
 
@@ -118,8 +115,13 @@ class SecurityAgent(BaseAgent):
                     )
                 )
 
-
             elif security_risk > 0.1:
+                confidence = self.calculate_confidence(
+                    [
+                        security_risk,
+                        1.0 - trust_score
+                    ]
+                )
 
                 findings.append(
                     self.create_finding(
@@ -128,7 +130,7 @@ class SecurityAgent(BaseAgent):
                             "Moderate security attention recommended"
                         ),
                         severity="MEDIUM",
-                        confidence=security_risk,
+                        confidence=confidence,
                         evidence={
                             "security_risk": security_risk
                         }

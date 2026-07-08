@@ -103,7 +103,7 @@ class ReviewerAgent(BaseAgent):
 
 
             if complexity > 0.5:
-
+                confidence = self.calculate_confidence([complexity, 1.0 - trust_score])
                 findings.append(
                     self.create_finding(
                         component=file_path,
@@ -111,7 +111,7 @@ class ReviewerAgent(BaseAgent):
                             "High structural complexity detected"
                         ),
                         severity="HIGH",
-                        confidence=complexity,
+                        confidence=confidence,
                         evidence={
                             "complexity": complexity
                         }

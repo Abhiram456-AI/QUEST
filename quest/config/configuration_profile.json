@@ -1,0 +1,28 @@
+{
+    "reliability_benchmark": 0.80,
+    "simulation_defaults": {
+        "loc_reduction": 0.40,
+        "complexity_reduction": 0.45,
+        "coupling_reduction": 0.30
+    },
+    "static_benchmarks": {
+        "complexity_threshold": 40
+    },
+    "weights": {
+        "trust": 0.15,
+        "quantum_walk": 0.15,
+        "qaoa": 0.15,
+        "qvnn": 0.15,
+        "agents": 0.15,
+        "dependency_centrality": 0.15,
+        "complexity": 0.10
+    },
+    "confidence_cappings": {
+        "max_confidence": 0.95,
+        "disagreement_penalty_ceiling": 0.30
+    },
+    "adaptive_thresholds": {
+        "quantum_walk_dangerous_threshold": 0.50,
+        "qvnn_reliable_threshold": 0.70
+    }
+}

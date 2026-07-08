@@ -112,6 +112,20 @@ class VerifierAgent(BaseAgent):
             confidence_values
         )
 
+        # Agent Consensus Layer
+        agreement_score = 1.0
+        severities = [f.get("severity", "LOW") for f in agent_findings]
+        if severities:
+            from collections import Counter
+            counts = Counter(severities)
+            most_common_count = counts.most_common(1)[0][1]
+            agreement_score = most_common_count / len(severities)
+            
+            # Confidence penalty: low consensus reduces final confidence
+            if agreement_score < 0.5:
+                confidence = confidence * 0.60
+            elif agreement_score < 0.8:
+                confidence = confidence * 0.80
 
         critic_support = len(
             [
@@ -126,7 +140,6 @@ class VerifierAgent(BaseAgent):
             ]
         )
 
-
         if average_risk >= 0.7:
             decision = "HIGH_RELIABILITY_ATTENTION_REQUIRED"
             severity = "HIGH"
@@ -138,7 +151,6 @@ class VerifierAgent(BaseAgent):
         else:
             decision = "REPOSITORY_RELIABILITY_ACCEPTABLE"
             severity = "LOW"
-
 
         findings.append(
             self.create_finding(
@@ -154,7 +166,8 @@ class VerifierAgent(BaseAgent):
                     "total_agent_findings": len(
                         agent_findings
                     ),
-                    "critic_supported_findings": critic_support
+                    "critic_supported_findings": critic_support,
+                    "agreement_score": round(agreement_score, 4)
                 }
             )
         )

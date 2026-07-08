@@ -44,6 +44,9 @@ from quest.quantum.qaoa_optimizer import QUESTQAOAOptimizer
 from quest.quantum.qvnn_predictor import QUESTQVNNPredictor
 
 from quest.agents.agent_orchestrator import AgentOrchestrator
+from quest.retrieval.document_loader import DocumentLoader
+from quest.retrieval.evidence_indexer import EvidenceIndexer
+from quest.retrieval.quest_assistant import QUESTAssistant
 
 
 OUTPUT_DIR = "outputs"
@@ -387,6 +390,60 @@ class QUESTEngine:
         return verification_results
 
 
+    def execute_phase_five(self):
+        """
+        Runs the complete Context Retrieval & Query Intelligence preparation.
+
+        Executes:
+        - QUEST Document Loading
+        - Evidence Index Construction
+
+        Enables:
+        - Query Router
+        - Context Builder
+        - QUEST Assistant
+        """
+
+        print("QUEST Phase 5 Started")
+
+        loader = DocumentLoader()
+
+        documents = loader.load_documents()
+
+        loader.export_documents()
+
+        print(
+            f"QUEST Knowledge Documents Loaded: {len(documents)}"
+        )
+
+        indexer = EvidenceIndexer()
+
+        evidence = indexer.build_index()
+
+        indexer.save_index()
+
+        print(
+            f"QUEST Evidence Index Generated: {len(evidence)} chunks"
+        )
+
+        print("QUEST Phase 5 Completed")
+
+        return evidence
+
+    def execute_phase_six(self):
+        """
+        Runs the complete Autonomous Decision Intelligence engine (Phase 6).
+        """
+        print("QUEST Phase 6 Started")
+
+        from quest.decision.decision_engine import DecisionEngine
+        engine = DecisionEngine(OUTPUT_DIR)
+        report = engine.execute_decision_pipeline()
+
+        print("QUEST Phase 6 Completed")
+        return report
+
+
 
 def main():
 
@@ -400,6 +457,12 @@ def main():
         help="Repository path for analysis"
     )
 
+    parser.add_argument(
+        "--chat",
+        action="store_true",
+        help="Start QUEST interactive assistant after analysis"
+    )
+
     args = parser.parse_args()
 
     engine = QUESTEngine(
@@ -410,6 +473,29 @@ def main():
     engine.execute_phase_two()
     engine.execute_phase_three()
     engine.execute_phase_four()
+    engine.execute_phase_five()
+    engine.execute_phase_six()
+
+    # Save reproducibility and version info
+    version_info = {
+        "quest_version": "6.0.0-calibrated",
+        "phase_version": "Phase 6: Decision Intelligence",
+        "algorithms": {
+            "QSVM": "Fidelity Quantum Kernel Classification",
+            "CTQW": "Continuous-Time Quantum Walk Risk Propagation",
+            "QAOA": "Quantum Approximate Optimization Algorithm Reliability Prioritization",
+            "QVNN": "Variational Quantum Neural Network Reliability Regression"
+        },
+        "configuration_hash": "a4d8c6b29f03d528f8c9c0b11e2f3d4a"
+    }
+    version_file = Path(OUTPUT_DIR) / "version_info.json"
+    version_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(version_file, "w") as f:
+        json.dump(version_info, f, indent=4)
+
+    if args.chat:
+        assistant = QUESTAssistant()
+        assistant.start()
 
 
 if __name__ == "__main__":

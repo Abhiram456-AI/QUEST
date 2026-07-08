@@ -75,6 +75,21 @@ class ComplexityVisitor(ast.NodeVisitor):
         self.generic_visit(node)
 
 
+class ModuleComplexityVisitor(ComplexityVisitor):
+    """
+    Computes module-level cyclomatic complexity by skipping function/class bodies.
+    """
+    def visit_FunctionDef(self, node):
+        pass
+
+    def visit_AsyncFunctionDef(self, node):
+        pass
+
+    def visit_ClassDef(self, node):
+        pass
+
+
+
 class CodeMetricsAnalyzer:
     """
     Generates measurable reliability indicators
@@ -112,18 +127,26 @@ class CodeMetricsAnalyzer:
             if isinstance(node, ast.ClassDef)
         ]
 
-        total_complexity = 0
+        # Module-level cyclomatic complexity by skipping function/class bodies
+        module_visitor = ModuleComplexityVisitor()
+        module_visitor.visit(tree)
+        module_complexity = module_visitor.complexity
 
+        # Average complexity of individual functions
+        total_func_complexity = 0
         for function in functions:
             visitor = ComplexityVisitor()
             visitor.visit(function)
-            total_complexity += visitor.complexity
+            total_func_complexity += visitor.complexity
 
         avg_complexity = (
-            total_complexity / len(functions)
+            total_func_complexity / len(functions)
             if functions
             else 0
         )
+
+        # File-level total complexity is the sum of module-level complexity and all function complexities
+        total_complexity = module_complexity + total_func_complexity
 
         maintainability = self.calculate_maintainability(
             loc,

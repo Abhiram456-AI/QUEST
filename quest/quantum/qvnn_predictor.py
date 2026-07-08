@@ -37,6 +37,7 @@ class QVNNPrediction:
     sample_id: int
     reliability_probability: float
     predicted_state: str
+    component: str = "unknown"
 
 
 class QUESTQVNNPredictor:
@@ -147,6 +148,17 @@ class QUESTQVNNPredictor:
             X_path
         )
 
+        # Load component names from trust_vectors.json to map sample_id to component path
+        trust_vectors_path = Path("outputs/trust_vectors.json")
+        components = []
+        if trust_vectors_path.exists():
+            try:
+                with open(trust_vectors_path, "r", encoding="utf-8") as f:
+                    vectors_data = json.load(f)
+                    components = [item.get("file_path", "unknown") for item in vectors_data]
+            except Exception:
+                pass
+
         predictions = []
 
 
@@ -166,12 +178,14 @@ class QUESTQVNNPredictor:
             else:
                 state = "LOW_RELIABILITY"
 
+            comp_path = components[index] if index < len(components) else "unknown"
 
             predictions.append(
                 QVNNPrediction(
                     sample_id=index,
                     reliability_probability=probability,
-                    predicted_state=state
+                    predicted_state=state,
+                    component=comp_path
                 )
             )
 

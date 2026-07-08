@@ -92,7 +92,7 @@ class CriticAgent(BaseAgent):
                 )
 
             elif severity == "HIGH" and evidence_strength < 0.5:
-
+                critic_conf = self.calculate_confidence([1.0 - evidence_strength, 0.6])
                 findings.append(
                     self.create_finding(
                         component=component,
@@ -101,7 +101,7 @@ class CriticAgent(BaseAgent):
                             "supporting evidence"
                         ),
                         severity="MEDIUM",
-                        confidence=0.7,
+                        confidence=critic_conf,
                         evidence={
                             "original_severity": severity,
                             "evidence_strength": evidence_strength

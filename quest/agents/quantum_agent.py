@@ -114,6 +114,10 @@ class QuantumAgent(BaseAgent):
 
 
             if influential:
+                scores = walk.get("propagation_scores", {})
+                top_scores = sorted(scores.values(), reverse=True)
+                walk_conf = sum(top_scores[:3]) if top_scores else 0.75
+                walk_conf = max(0.1, min(0.99, walk_conf))
 
                 findings.append(
                     self.create_finding(
@@ -123,7 +127,7 @@ class QuantumAgent(BaseAgent):
                             "through the software graph"
                         ),
                         severity="MEDIUM",
-                        confidence=0.75,
+                        confidence=walk_conf,
                         evidence={
                             "influential_components": influential
                         }
